@@ -17,10 +17,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.101
-    - name: Go to project-folder
-      run: cd RequestModelConverters
     - name: Install dependencies
-      run: dotnet restore
+      run:
+        - cd RequestModelConverters
+        - dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
