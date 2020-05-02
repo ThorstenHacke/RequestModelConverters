@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestModelConverters", "RequestModelConverters\RequestModelConverters.csproj", "{AF04C6B7-E830-49CC-A280-C6ECEB689C75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequestModelConverters", "RequestModelConverters\RequestModelConverters.csproj", "{AF04C6B7-E830-49CC-A280-C6ECEB689C75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestModelConverters.Tests", "RequestModelConverters.Tests\RequestModelConverters.Tests.csproj", "{4823BC0A-9616-4682-A0A3-798BABA2B70B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{AF04C6B7-E830-49CC-A280-C6ECEB689C75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF04C6B7-E830-49CC-A280-C6ECEB689C75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF04C6B7-E830-49CC-A280-C6ECEB689C75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4823BC0A-9616-4682-A0A3-798BABA2B70B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4823BC0A-9616-4682-A0A3-798BABA2B70B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4823BC0A-9616-4682-A0A3-798BABA2B70B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4823BC0A-9616-4682-A0A3-798BABA2B70B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
