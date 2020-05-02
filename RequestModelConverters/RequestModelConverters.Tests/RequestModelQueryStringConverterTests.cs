@@ -21,5 +21,13 @@ namespace RequestModelQueryStringConverters.Tests
             var actual = converter.ConvertRequestModel(new ComplexTestModel());
             Assert.AreEqual(ComplexTestModel.ExpectedString, actual);
         }
+
+        [Test]
+        public void TestEmptyModel()
+        {
+            RequestModelQueryStringConverter converter = new RequestModelQueryStringConverter();
+            var actual = converter.ConvertRequestModel(new object());
+            Assert.AreEqual(string.Empty, actual);
+        }
     }
 }

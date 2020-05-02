@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace RequestModelConverters
 {
@@ -30,5 +31,18 @@ namespace RequestModelConverters
         /// True if value is always converted to Uppercase for URI
         /// </summary>
         public bool Uppercase { get; }
+
+        public string GetPropertyValue(PropertyInfo property, object obj) {
+            string propertyValue = property.GetValue(obj).ToString();
+            if (IgnoreValue != null && IgnoreValue.Equals(propertyValue))
+            {
+                return string.Empty;
+            }
+            if (Uppercase)
+            {
+                propertyValue = propertyValue.ToUpper();
+            }
+            return propertyValue;
+        }
     }
 }
