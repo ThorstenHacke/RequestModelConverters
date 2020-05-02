@@ -18,8 +18,11 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Install dependencies
+      run: cd RequestModelConverters
       run: dotnet restore
     - name: Build
+      run: cd RequestModelConverters
       run: dotnet build --configuration Release --no-restore
     - name: Test
+      run: cd RequestModelConverters
       run: dotnet test --no-restore --verbosity normal
