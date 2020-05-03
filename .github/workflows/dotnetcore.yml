@@ -17,9 +17,6 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 2.1.801
-        source-url: https://nuget.pkg.github.com/<organization>/index.json
-      env:
-        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}   
     - name: Install dependencies
       run: |
         cd RequestModelConverters
@@ -37,5 +34,11 @@ jobs:
         cd RequestModelConverters
         dotnet pack -c Release -o out
     - name: Push generated package to GitHub registry
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101
+        source-url: https://nuget.pkg.github.com/<organization>/index.json
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}   
       run: dotnet nuget push ./RequestModelConverters/out/*.nupkg --skip-duplicate --no-symbols true
 
