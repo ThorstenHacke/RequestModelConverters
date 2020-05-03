@@ -28,6 +28,10 @@ jobs:
       run: |
         cd RequestModelConverters
         dotnet build --configuration Release --no-restore
+    - name: Test
+      run: |
+        cd RequestModelConverters
+        dotnet test
     - name: Pack
       run: |
         cd RequestModelConverters

@@ -1,5 +1,6 @@
 ﻿using Moq;
 using NUnit.Framework;
+using RequestModelConverters.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Reflection;

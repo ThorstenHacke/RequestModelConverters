@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace RequestModelConverters
+namespace RequestModelConverters.Attributes
 {
     public class RequestParameterAttribute : Attribute
     {
@@ -32,7 +32,8 @@ namespace RequestModelConverters
         /// </summary>
         public bool Uppercase { get; }
 
-        public string GetPropertyValue(PropertyInfo property, object obj) {
+        public virtual string GetPropertyValue(PropertyInfo property, object obj)
+        {
             string propertyValue = property.GetValue(obj).ToString();
             if (IgnoreValue != null && IgnoreValue.Equals(propertyValue))
             {
