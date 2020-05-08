@@ -9,7 +9,7 @@ namespace RequestModelQueryStringConverters.Tests
         [Test]
         public void Test1()
         {
-            RequestModelQueryStringConverter converter = new RequestModelQueryStringConverter();
+            RequestParametersQueryStringConverter converter = new RequestParametersQueryStringConverter();
             var actual = converter.ConvertRequestModel(new SimpleTestModel());
             Assert.AreEqual(SimpleTestModel.ExpectedString, actual);
         }
@@ -17,7 +17,7 @@ namespace RequestModelQueryStringConverters.Tests
         [Test]
         public void TestComplexModel()
         {
-            RequestModelQueryStringConverter converter = new RequestModelQueryStringConverter();
+            RequestParametersQueryStringConverter converter = new RequestParametersQueryStringConverter();
             var actual = converter.ConvertRequestModel(new ComplexTestModel());
             Assert.AreEqual(ComplexTestModel.ExpectedString, actual);
         }
@@ -25,9 +25,17 @@ namespace RequestModelQueryStringConverters.Tests
         [Test]
         public void TestEmptyModel()
         {
-            RequestModelQueryStringConverter converter = new RequestModelQueryStringConverter();
+            RequestParametersQueryStringConverter converter = new RequestParametersQueryStringConverter();
             var actual = converter.ConvertRequestModel(new object());
             Assert.AreEqual(string.Empty, actual);
+        }
+
+        [Test]
+        public void TestDetailedModel()
+        {
+            RequestParametersQueryStringConverter converter = new RequestParametersQueryStringConverter();
+            var actual = converter.ConvertRequestModel(new DetailedTestModel());
+            Assert.AreEqual(DetailedTestModel.ExpectedValue, actual);
         }
     }
 }
