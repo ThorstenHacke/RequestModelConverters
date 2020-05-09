@@ -38,5 +38,5 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: Package
-        path: RequestModelConverters/bin/Release/*.nupkg
+        path: RequestModelConverters/RequestModelConverters/bin/Release/*.nupkg
 
