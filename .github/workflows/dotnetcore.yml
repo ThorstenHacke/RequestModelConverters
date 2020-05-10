@@ -8,9 +8,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
@@ -39,4 +37,15 @@ jobs:
       with:
         name: Package
         path: RequestModelConverters/RequestModelConverters/bin/Release/*.nupkg
-
+  deploy:
+    name: Deploy nuget Package
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download result from Build
+        uses: actions/download-artifact@v2
+        with:
+          name: Package
+          path: package.nupkg
+      - name: Push to github-repo
+        run: dotnet nuget push package.nupkg
