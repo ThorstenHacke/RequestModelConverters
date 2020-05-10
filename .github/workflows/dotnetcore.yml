@@ -50,4 +50,6 @@ jobs:
           name: Package
           path: package.nupkg
       - name: Push to github-repo
-        run: dotnet nuget push package.nupkg -s https://nuget.pkg.github.com/thorstenhacke/index.json -k NUGET_AUTH_TOKEN
+        run: |
+          ls -la
+          dotnet nuget push package.nupkg -s https://nuget.pkg.github.com/thorstenhacke/index.json -k NUGET_AUTH_TOKEN
