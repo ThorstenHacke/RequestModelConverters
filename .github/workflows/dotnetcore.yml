@@ -48,4 +48,4 @@ jobs:
           name: Package
           path: package.nupkg
       - name: Push to github-repo
-        run: dotnet nuget push package.nupkg
+        run: dotnet nuget push package.nupkg -s https://nuget.pkg.github.com/thorstenhacke/RequestModelConverters/index.json
