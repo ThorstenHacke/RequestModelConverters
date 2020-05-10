@@ -44,8 +44,10 @@ jobs:
     steps:
       - name: Download result from Build
         uses: actions/download-artifact@v2
+        env:
+          NUGET_AUTH_TOKEN: ${{secrets.NUGET_API_KEY}}   
         with:
           name: Package
           path: package.nupkg
       - name: Push to github-repo
-        run: dotnet nuget push package.nupkg -s https://nuget.pkg.github.com/thorstenhacke/RequestModelConverters/index.json
+        run: dotnet nuget push package.nupkg -s https://nuget.pkg.github.com/thorstenhacke/RequestModelConverters/index.json -k NUGET_AUTH_TOKEN
